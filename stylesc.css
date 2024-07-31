@@ -1,168 +1,147 @@
+/* Estilo para el elemento body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  font-family: Arial, sans-serif; /* Establece la fuente para el texto */
+  background-color: #f0f0f0; /* Color de fondo gris claro */
+  display: flex; /* Utiliza un contenedor flex */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* Altura del viewport completa */
+  margin: 0; /* Elimina los márgenes predeterminados */
 }
 
+/* Estilo para el contenedor principal */
 .container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 350px;
+  background-color: white; /* Fondo blanco */
+  padding: 20px; /* Espaciado interior de 20px */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra alrededor del contenedor */
+  text-align: center; /* Texto centrado */
+  width: 350px; /* Ancho fijo de 350px */
 }
 
+/* Estilo para el campo de búsqueda */
 #search {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+  width: 100%; /* Ancho completo */
+  padding: 5px; /* Espaciado interior de 5px */
+  margin-bottom: 10px; /* Espaciado inferior de 10px */
 }
 
+/* Estilo para la lista de sugerencias */
 .suggestions {
-  background-color: white;
-  border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-y: auto;
-  margin-bottom: 10px;
+  background-color: white; /* Fondo blanco */
+  border: 1px solid #ccc; /* Borde gris claro */
+  max-height: 150px; /* Altura máxima de 150px */
+  overflow-y: auto; /* Desplazamiento vertical */
+  margin-bottom: 10px; /* Espaciado inferior de 10px */
 }
 
+/* Estilo para cada sugerencia */
 .suggestion {
-  padding: 10px;
-  cursor: pointer;
+  padding: 10px; /* Espaciado interior de 10px */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
+/* Estilo para la sugerencia cuando se pasa el cursor por encima */
 .suggestion:hover {
-  background-color: #eee;
+  background-color: #eee; /* Fondo gris claro */
 }
 
+/* Estilo para los elementos de producto */
 .product-slot {
-  background-color: #e0e0e0;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
+  background-color: #e0e0e0; /* Fondo gris claro */
+  padding: 10px; /* Espaciado interior de 10px */
+  margin: 5px; /* Espaciado de 5px alrededor */
+  border-radius: 5px; /* Bordes redondeados */
 }
 
+/* Estilo general para los botones */
 #compare-btn, #refresh-btn, #show-info-btn {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px; /* Espaciado interior de 10px arriba/abajo y 20px izquierda/derecha */
+  margin: 5px; /* Espaciado de 5px alrededor */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
+/* Estilo específico para el botón de comparar */
 #compare-btn {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #4CAF50; /* Fondo verde */
+  color: white; /* Texto blanco */
 }
 
+/* Estilo específico para el botón de refrescar */
 #refresh-btn {
-  background-color: #f44336;
-  color: white;
+  background-color: #f44336; /* Fondo rojo */
+  color: white; /* Texto blanco */
 }
 
+/* Estilo específico para el botón de mostrar información */
 #show-info-btn {
-  background-color: #2196F3;
-  color: white;
-  display: block;
-  margin: 10px auto;
+  background-color: #2196F3; /* Fondo azul */
+  color: white; /* Texto blanco */
+  display: block; /* Se muestra como un bloque */
+  margin: 10px auto; /* Espaciado automático a los lados y 10px arriba/abajo */
 }
 
+/* Estilo para el resultado */
 #result {
-  margin-top: 10px;
+  margin-top: 10px; /* Espaciado superior de 10px */
 }
 
+/* Estilo para el modal de información */
 #info-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-  padding-top: 60px;
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Posición fija */
+  z-index: 1; /* Nivel de pila */
+  left: 0; /* Alineado a la izquierda */
+  top: 0; /* Alineado en la parte superior */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  overflow: auto; /* Desplazamiento automático */
+  background-color: rgb(0,0,0); /* Fondo negro sólido */
+  background-color: rgba(0,0,0,0.4); /* Fondo negro semi-transparente */
+  padding-top: 60px; /* Espaciado superior de 60px */
 }
 
+/* Estilo para el contenido del modal */
 .modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  background-color: #fefefe; /* Fondo blanco */
+  margin: 5% auto; /* Centrado verticalmente y horizontalmente */
+  padding: 20px; /* Espaciado interior de 20px */
+  border: 1px solid #888; /* Borde gris */
+  width: 80%; /* Ancho del 80% */
+  position: relative; /* Posición relativa */
 }
 
+/* Estilo para el botón de cerrar el modal */
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  color: #aaa; /* Color gris claro */
+  float: right; /* Alineado a la derecha */
+  font-size: 28px; /* Tamaño de fuente grande */
+  font-weight: bold; /* Fuente en negrita */
 }
 
+/* Estilo para el botón de cerrar el modal al pasar el cursor */
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  color: black; /* Color negro */
+  text-decoration: none; /* Sin subrayado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
-/* Estilos existentes... */
-
-#info-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-  padding-top: 60px;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  position: relative;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Ajustar botones para estar centrados */
+/* Estilo específico para centrar el botón de mostrar información */
 #show-info-btn {
-  display: block;
-  margin: 10px auto;
+  display: block; /* Se muestra como un bloque */
+  margin: 10px auto; /* Centrado horizontalmente */
 }
 
+/* Estilo para el botón de llamada a la acción */
 .cta {
-  display: inline-block;
-  background-color: #2091F9;
-  justify-self: center;
-  color: #fff;
-  text-decoration: none;
-  padding: 13px 30px;
-  border-radius: 32px;
+  display: inline-block; /* Se muestra como un bloque en línea */
+  background-color: #2091F9; /* Fondo azul */
+  justify-self: center; /* Centrado en el contenedor */
+  color: #fff; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  padding: 13px 30px; /* Espaciado interior */
+  border-radius: 32px; /* Bordes redondeados */
 }
