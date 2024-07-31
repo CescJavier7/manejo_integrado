@@ -1,677 +1,454 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
+/* Define variables globales */
 :root {
-    --padding-container: 100px 0;
-    --color-title: #001A49;
+    --padding-container: 100px 0; /* Define el espacio de relleno para contenedores */
+    --color-title: #001A49; /* Define el color de título */
 }
 
+/* Estilos globales para el cuerpo del documento */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Define la fuente principal */
 }
 
+/* Estilos para el contenedor principal */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: var(--padding-container);
+    width: 90%; /* Ancho máximo del contenedor */
+    max-width: 1200px; /* Ancho máximo absoluto */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: hidden; /* Oculta el desbordamiento de contenido */
+    padding: var(--padding-container); /* Aplica el padding definido globalmente */
 }
 
+/* Estilos para la sección hero */
 .hero {
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
-    max-height: 800px;
-    position: relative;
-    display: grid;
-    grid-template-rows: 100px 1fr;
-    color: #fff;
+    width: 100%; /* Ancho completo */
+    height: 100vh; /* Altura completa del viewport */
+    min-height: 600px; /* Altura mínima */
+    max-height: 800px; /* Altura máxima */
+    position: relative; /* Posición relativa para los elementos internos */
+    display: grid; /* Disposición en grid */
+    grid-template-rows: 100px 1fr; /* Filas de la rejilla */
+    color: #fff; /* Color de texto */
 }
 
+/* Pseudo-elemento antes del hero para efectos visuales */
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(9deg, #0000008c 0%, #0000008c 100%), url('portada.png');
-    background-size: cover;
-    clip-path: polygon(0 0, 1000% 0, 100% 80%, 50% 95%, 0 80%);
-    z-index: -1;
+    content: ""; /* Contenido vacío */
+    position: absolute; /* Posición absoluta dentro del hero */
+    top: 0; /* Ajuste en la parte superior */
+    left: 0; /* Ajuste en la parte izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-image: linear-gradient(9deg, #0000008c 0%, #0000008c 100%), url('portada.png'); /* Imagen de fondo con degradado y superposición */
+    background-size: cover; /* Ajuste del tamaño del fondo */
+    clip-path: polygon(0 0, 1000% 0, 100% 80%, 50% 95%, 0 80%); /* Forma recortada del fondo */
+    z-index: -1; /* Posición detrás del contenido principal */
 }
 
-
-/* Nav */
-
+/* Estilos para la barra de navegación */
 .nav {
-    --padding-container: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    --padding-container: 0; /* Relleno específico para navegación */
+    height: 100%; /* Altura completa */
+    display: flex; /* Disposición flex */
+    align-items: center; /* Alineación vertical */
 }
 
+/* Estilos para el título de la navegación */
 .nav__title {
-    font-weight: 300;
+    font-weight: 300; /* Grosor de la fuente */
 }
 
+/* Estilos para los enlaces de la navegación */
 .nav__link {
-    margin-left: auto;
-    padding: 0;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 2em;
+    margin-left: auto; /* Margen izquierdo automático */
+    padding: 0; /* Sin relleno */
+    display: grid; /* Disposición en grid */
+    grid-auto-flow: column; /* Flujo automático de columnas */
+    grid-auto-columns: max-content; /* Columnas de tamaño máximo */
+    gap: 2em; /* Espacio entre elementos */
 }
 
+/* Estilos para los elementos de lista de la navegación */
 .nav__items {
-    list-style: none;
+    list-style: none; /* Sin viñetas */
 }
 
+/* Estilos para los enlaces dentro de la navegación */
 .nav__links {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* Color de texto */
+    text-decoration: none; /* Sin decoración de texto */
 }
 
+/* Estilos para el menú de navegación desplegable */
 .nav__menu {
-    margin-left: auto;
-    cursor: pointer;
-    display: none;
+    margin-left: auto; /* Margen izquierdo automático */
+    cursor: pointer; /* Cursor de puntero */
+    display: none; /* Oculto por defecto */
 }
 
+/* Estilos para la imagen de navegación */
 .nav__img {
-    display: block;
-    width: 30px;
+    display: block; /* Visualización de bloque */
+    width: 30px; /* Ancho de imagen */
 }
 
 
-.nav__close {
-    display: var(--show, none);
-}
-
-
-/* Hero container */
-
+/* Contenedor del hero */
 .hero__container {
-    max-width: 800px;
-    --padding-container: 0;
-    display: grid;
-    grid-auto-rows: max-content;
-    align-content: center;
-    gap: 1em;
-    padding-bottom: 100px;
-    text-align: center;
+    max-width: 800px; /* Ancho máximo del contenedor */
+    --padding-container: 0; /* Relleno específico para el hero */
+    display: grid; /* Disposición en grid */
+    grid-auto-rows: max-content; /* Altura automática de filas */
+    align-content: center; /* Alineación del contenido */
+    gap: 1em; /* Espacio entre elementos */
+    padding-bottom: 100px; /* Relleno inferior */
+    text-align: center; /* Alineación de texto */
 }
 
+/* Estilos para el título del hero */
 .hero__title {
-    font-size: 3rem;
+    font-size: 3rem; /* Tamaño de fuente */
 }
 
+/* Estilos para el párrafo del hero */
 .hero__paragraph {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Margen inferior */
 }
 
+/* Estilos para el call-to-action - Botón del mezclador */
 .cta {
-    display: inline-block;
-    background-color: #2091F9;
-    justify-self: center;
-    color: #fff;
-    text-decoration: none;
-    padding: 13px 30px;
-    border-radius: 32px;
+    display: inline-block; /* Visualización en línea */
+    background-color: #2091F9; /* Color de fondo */
+    justify-self: center; /* Alineación del elemento dentro del grid */
+    color: #fff; /* Color de texto */
+    text-decoration: none; /* Sin decoración de texto */
+    padding: 13px 30px; /* Relleno */
+    border-radius: 32px; /* Radio del borde */
 }
 
-/* About */
-
+/* Estilos para la sección About */
 .about {
-    text-align: center;
+    text-align: center; /* Alineación de texto */
 }
 
+/* Estilos para el subtítulo de About */
 .subtitle {
-    color: var(--color-title);
-    font-size: 2rem;
-    margin-bottom: 25px;
+    color: var(--color-title); /* Color de texto utilizando variable */
+    font-size: 2rem; /* Tamaño de fuente */
+    margin-bottom: 25px; /* Margen inferior */
 }
 
-
+/* Estilos para el párrafo de About */
 .about__paragraph {
-    line-height: 1.7;
+    line-height: 1.7; /* Altura de línea */
 }
 
+/* Estilos para el contenido principal de About */
 .about__main {
-    padding-top: 80px;
-    display: grid;
-    width: 90%;
-    margin: 0 auto;
-    gap: 1em;
-    overflow: hidden;
-    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    padding-top: 80px; /* Relleno superior */
+    display: grid; /* Disposición en grid */
+    width: 90%; /* Ancho del contenido */
+    margin: 0 auto; /* Margen automático horizontal */
+    gap: 1em; /* Espacio entre elementos */
+    overflow: hidden; /* Ocultar desbordamiento */
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto)); /* Columnas de tamaño automático */
 }
 
-
+/* Estilos para los iconos de About */
 .about__icons {
-    display: grid;
-    gap: 1em;
-    justify-items: center;
-    width: 260px;
-    overflow: hidden;
-    margin: 0 auto;
+    display: grid; /* Disposición en grid */
+    gap: 1em; /* Espacio entre elementos */
+    justify-items: center; /* Alineación de items */
+    width: 260px; /* Ancho fijo */
+    overflow: hidden; /* Ocultar desbordamiento */
+    margin: 0 auto; /* Margen automático */
 }
 
-.about__icon {
-    width: 40px;
-}
-
-/* Knowledge */
-
-.knowledge {
-    background-color: #e5e5f7;
-    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    overflow: hidden;
-}
-
-.knowledge__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    align-items: center;
-}
-
-.knowledge__picture{
-    max-width: 500px;
-}
-
-.knowledge__paragraph{
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-.knowledge__img{
-    width: 100%;
-    display: block;
-}
-
-/* price */
-
-.price{
-    text-align: center;
-}
-
-.price__table{
-    padding-top: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5em;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.price__element{
-    background-color: #e5e5f7;
-    text-align: center;
-    border-radius: 10px;
-    width: 330px;
-    padding: 40px;
-    --color-plan: #696871;
-    --color-price: #1D293F;
-    --bg-cta: #fff;
-    --color-cta: #5454D4;
-    --color-items: #696871;
-}
-
-.price__element--best{
-    width: 370px;
-    padding: 60px 40px;
-    background-color: #FF7143;
-    --color-plan: rgb(255 255 255 / 75%);
-    --color-price: #fff;
-    --bg-cta: #9F3919;
-    --color-cta: #FFF;
-    --color-items: #fff;
-}
-
-
-.price__name{
-    color: var(--color-plan);
-    margin-bottom: 15px;
-    font-weight: 300;
-}
-
-.price__price{
-    font-size: 2.5rem;
-    color: var(--color-price);
-}
-
-.price__items{
-    margin-top: 35px;
-    display: grid;
-    gap: 1em;
-    font-weight: 300;
-    font-size: 1.2rem;
-    margin-bottom: 50px;
-    color: var(--color-items);
-}
-
-.price__cta{
-    display: block;
-    padding: 20px 0;
-    border-radius: 10px;
-    text-decoration: none;
-    background-color: var(--bg-cta);
-    font-weight: 600;
-    color: var(--color-cta);
-    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
-}
-
-/* Testimony */
-
-.testimony{
-    background-color: #e5e5f7;
-}
-
-.testimony__container{
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    gap: 1em;
-    align-items: center;
-}
-
-.testimony__body{
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2em;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    opacity: 0;
-    pointer-events: none;
-}
-
-
-.testimony__body--show{
-    pointer-events: unset;
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.testimony__img{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 50% 30%;
-}
-
-.testimony__texts{
-    max-width: 700px;
-}
-
-.testimony__course{
-    background-color: royalblue;
-    color: #fff;
-    display: inline-block;
-    padding: 5px;
-}
-
-.testimony__arrow{
-    width: 90%;
-    cursor: pointer;
-}
-
-/* Questions */
-
-.questions{
-    text-align: center;
-}
-
-.questions__container{
-    display: grid;
-    gap: 2em;
-    padding-top: 50px;
-    padding-bottom: 100px;
-}
-
-.questions__padding{
-    padding: 0;
-    transition: padding .3s;
-    border: 1px solid #5454D4;
-    border-radius: 6px;
-}
-
-.questions__padding--add{
-    padding-bottom: 30px;
-}
-
-.questions__answer{
-    padding: 0 30px 0;
-    overflow: hidden;
-}
-
-.questions__title{
-    text-align: left;
-    display: flex;
-    font-size: 20px;
-    padding: 30px 0 30px;
-    cursor: pointer;
-    color: var(--color-title);
-    justify-content: space-between;
-}
-
-.questions__arrow{
-    border-radius: 50%;
-    background-color: var(--color-title);
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    margin-left: 10px;
-    transition:  transform .3s;
-}
-
-.questions__arrow--rotate{
-    transform: rotate(180deg);
-}
-
-.questions__show{
-    text-align: left;
-    height: 0;
-    transition: height .3s;
-}
-
-.questions__img{
-    display: block;
-}
-
-.questions__copy{
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
 
 /* Footer */
 
+/* Estilo para el contenedor del pie de página */
 .footer{
-    background-color: #1D293F;
+    background-color: #1D293F; /* Color de fondo del pie de página */
 }
 
+/* Estilo para el título del pie de página */
 .footer__title{
-    font-weight: 300;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-weight: 300; /* Peso de la fuente del título, 300 es una fuente ligera */
+    font-size: 2rem; /* Tamaño de la fuente del título */
+    margin-bottom: 30px; /* Espacio debajo del título */
 }
 
+/* Estilo para el título y el boletín del pie de página */
 .footer__title, .footer__newsletter{
-    color: #fff;
+    color: #fff; /* Color de la fuente, blanco */
 }
 
-
+/* Estilo para el contenedor principal del pie de página */
 .footer__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 60px;
+    display: flex; /* Utiliza flexbox para el diseño del contenedor */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: center; /* Alinea los elementos en el centro verticalmente */
+    border-bottom: 1px solid #fff; /* Línea inferior blanca */
+    padding-bottom: 60px; /* Espacio en la parte inferior del contenedor */
 }
 
+/* Estilo para la navegación en el pie de página */
 .nav--footer{
-    padding-bottom: 20px;
-    display: grid;
-    gap: 1em;
-    grid-auto-flow: row;
-    height: 100%;
+    padding-bottom: 20px; /* Espacio en la parte inferior de la navegación */
+    display: grid; /* Utiliza grid para el diseño de los elementos */
+    gap: 1em; /* Espacio entre los elementos de la grid */
+    grid-auto-flow: row; /* Coloca los elementos en filas automáticamente */
+    height: 100%; /* Altura completa */
 }
 
+/* Estilo para los enlaces de navegación en el pie de página */
 .nav__link--footer{
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    flex-wrap: wrap;
+    display: flex; /* Utiliza flexbox para el diseño de los enlaces */
+    margin: 0; /* Sin márgenes */
+    margin-right: 20px; /* Espacio a la derecha de los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan a la siguiente línea si es necesario */
 }
 
+/* Estilo para el contenedor de entradas del pie de página */
 .footer__inputs{
-    margin-top: 10px;
-    display: flex;
-    overflow: hidden;
+    margin-top: 10px; /* Espacio en la parte superior del contenedor de entradas */
+    display: flex; /* Utiliza flexbox para el diseño de las entradas */
+    overflow: hidden; /* Oculta el desbordamiento */
 }
 
+/* Estilo para la entrada del pie de página */
 .footer__input{
-    background-color: #fff;
-    height: 50px;
-    display: block;
-    padding-left: 10px;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-    border: none;
-    margin-right: 16px;
+    background-color: #fff; /* Color de fondo blanco */
+    height: 50px; /* Altura de la entrada */
+    display: block; /* La entrada se muestra como un bloque */
+    padding-left: 10px; /* Espacio interno a la izquierda */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de la fuente */
+    outline: none; /* Sin borde al hacer clic */
+    border: none; /* Sin borde */
+    margin-right: 16px; /* Espacio a la derecha de la entrada */
 }
 
+/* Estilo para el botón de envío del pie de página */
 .footer__submit{
-    margin-left: auto;
-    display: inline-block;
-    height: 50px;
-    padding: 0 20px ;
-    background-color: #2091F9;
-    border: none;
-    font-size: 1rem;
-    color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+    display: inline-block; /* Se muestra como un bloque en línea */
+    height: 50px; /* Altura del botón */
+    padding: 0 20px ; /* Espacio interno vertical 0, horizontal 20px */
+    background-color: #2091F9; /* Color de fondo azul */
+    border: none; /* Sin borde */
+    font-size: 1rem; /* Tamaño de la fuente */
+    color: #fff; /* Color de la fuente blanco */
+    border-radius: 6px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero al pasar el ratón */
 }
 
+/* Estilo para la copia del pie de página */
 .footer__copy{
-    --padding-container: 30px 0;
-    text-align: center;
-    color: #fff;
+    --padding-container: 30px 0; /* Espacio interno, usando variable CSS */
+    text-align: center; /* Texto centrado */
+    color: #fff; /* Color de la fuente blanco */
 }
 
+/* Estilo para el copyright del pie de página */
 .footer__copyright{
-    font-weight: 300;
+    font-weight: 300; /* Peso de la fuente ligero */
 }
 
+/* Estilo para los iconos del pie de página */
 .footer__icons{
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espacio en la parte inferior de los iconos */
 }
 
+/* Estilo para las imágenes de los iconos del pie de página */
 .footer__img{
-    width: 30px;
+    width: 30px; /* Ancho de las imágenes */
 }
 
-/* Media queries */
+/* Consultas de medios (Media Queries) */
 
+/* Estilos para pantallas con un ancho máximo de 800px */
 @media (max-width:800px){
     .nav__menu{
-        display: block;
+        display: block; /* Muestra el menú de navegación */
     }
 
     .nav__link--menu{
-        position: fixed;
-        background-color: #000;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        z-index: 100;
-        opacity: 0;
-        pointer-events: none;
-        transition: .7s opacity;
+        position: fixed; /* Posición fija */
+        background-color: #000; /* Color de fondo negro */
+        top: 0; /* Posición superior 0 */
+        left: 0; /* Posición izquierda 0 */
+        height: 100%; /* Altura completa */
+        width: 100%; /* Ancho completo */
+        display: flex; /* Utiliza flexbox para el diseño */
+        flex-direction: column; /* Dirección de los elementos en columna */
+        justify-content: space-evenly; /* Espacio uniforme entre los elementos */
+        align-items: center; /* Alinea los elementos en el centro */
+        z-index: 100; /* Nivel de z-index alto */
+        opacity: 0; /* Inicialmente invisible */
+        pointer-events: none; /* Desactiva los eventos del ratón */
+        transition: .7s opacity; /* Transición de opacidad de 0.7 segundos */
     }
 
     .nav__link--show{
-        --show: block;
-        opacity:1 ;
-        pointer-events: unset;
+        --show: block; /* Muestra el enlace */
+        opacity:1 ; /* Opacidad al 100% */
+        pointer-events: unset; /* Activa los eventos del ratón */
     }
 
     .nav__close{
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        width: 30px;
-        cursor: pointer;
+        position: absolute; /* Posición absoluta */
+        top: 30px; /* 30px desde la parte superior */
+        right: 30px; /* 30px desde la parte derecha */
+        width: 30px; /* Ancho de 30px */
+        cursor: pointer; /* Cursor de puntero al pasar el ratón */
     }
 
     .hero__title{
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Tamaño de la fuente del título del héroe */
     }
 
-
     .about__main{
-        gap: 2em;
+        gap: 2em; /* Espacio entre los elementos de la sección "About" */
     }
 
     .about__icons:last-of-type{
-        grid-column: 1/-1;
+        grid-column: 1/-1; /* El último ícono ocupa toda la fila en la grid */
     }
 
-
     .knowledge__container{
-        grid-template-columns: 1fr;
-        grid-template-rows: max-content 1fr;
-        gap: 3em;
-        text-align: center;
+        grid-template-columns: 1fr; /* Una columna en la grid */
+        grid-template-rows: max-content 1fr; /* Dos filas: una de contenido máximo y otra de 1fr */
+        gap: 3em; /* Espacio entre los elementos */
+        text-align: center; /* Texto centrado */
     }
 
     .knowledge__picture{
-        grid-row: 1/2;
-        justify-self: center;
+        grid-row: 1/2; /* Ocupa la primera fila en la grid */
+        justify-self: center; /* Centra el elemento */
     }
 
     .testimony__container{
-        grid-template-columns: 30px 1fr 30px;
+        grid-template-columns: 30px 1fr 30px; /* Tres columnas: 30px, 1fr, 30px */
     }
 
     .testimony__body{
-        grid-template-columns: 1fr;
-        grid-template-rows: max-content max-content;
-        gap: 3em;
-        justify-items:center ;
-    }
-
-
-    .testimony__img{
-        width: 200px;
-        height: 200px;
-        
-    }
-
-    .questions__copy{
-        width: 100%;
+        grid-template-columns: 1fr; /* Una columna en la grid */
+        grid-template-rows: max-content max-content; /* Dos filas de contenido máximo */
+        gap: 3em; /* Espacio entre los elementos */
+        justify-items:center ; /* Centra los elementos en la grid */
     }
 
     .footer__container{
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
     }
 
     .nav--footer{
-        width: 100%;
-        justify-items: center;
+        width: 100%; /* Ancho completo */
+        justify-items: center; /* Centra los elementos en la grid */
     }
 
     .nav__link--footer{
-        width: 100%;
-        justify-content: space-evenly;
-        margin: 0;
+        width: 100%; /* Ancho completo */
+        justify-content: space-evenly; /* Espacio uniforme entre los elementos */
+        margin: 0; /* Sin márgenes */
     }
 
     .footer__form{
-        width: 100%;
-        justify-content: space-evenly;
+        width: 100%; /* Ancho completo */
+        justify-content: space-evenly; /* Espacio uniforme entre los elementos */
     }
 
     .footer__input{
-        flex: 1;
+        flex: 1; /* El input ocupa todo el espacio disponible */
     }
-
 }
 
+/* Estilos para pantallas con un ancho máximo de 600px */
 @media (max-width:600px){
     .hero__title{
-        font-size: 2rem;
+        font-size: 2rem; /* Tamaño de la fuente del título del héroe */
     }
 
     .hero__paragraph{
-        font-size: 1rem;
+        font-size: 1rem; /* Tamaño de la fuente del párrafo del héroe */
     }
 
     .subtitle{
-        font-size: 1.8rem;
-    }
-
-    .price__element{
-        width: 90%;
-    }
-
-    .price__element--best{
-        width: 90%;
-        /* padding: 40px; */
-    }
-
-    .price__price{
-        font-size: 2rem;
-    }
-
-    .testimony{
-        --padding-container: 60px 0;
-    }
-
-    .testimony__container{
-        grid-template-columns: 28px 1fr 28px;
-        gap: .9em;
-    }
-
-    .testimony__arrow{
-        width: 100%;
-    }
-
-    .testimony__course{
-        margin-top: 15px;
-    }
-
-    .questions__title{
-        font-size: 1rem;
+        font-size: 1.8rem; /* Tamaño de la fuente del subtítulo */
     }
 
     .footer__title{
-        justify-self: start;
-        margin-bottom: 15px;
+        justify-self: start; /* Justifica el título al inicio */
+        margin-bottom: 15px; /* Espacio debajo del título */
     }
 
     .nav--footer{
-        padding-bottom: 60px;
+        padding-bottom: 60px; /* Espacio en la parte inferior de la navegación */
     }
+
 
     .nav__link--footer{
-        justify-content: space-between;
+        width: 100%; /* El enlace ocupa todo el ancho disponible */
+        justify-content: space-evenly; /* Distribuye los enlaces de manera uniforme */
+        margin: 0; /* Sin márgenes */
     }
-
-    .footer__inputs{
-        flex-wrap: wrap;
+    
+    /* Estilo para el formulario en el pie de página */
+    .footer__form{
+        width: 100%; /* El formulario ocupa todo el ancho disponible */
+        justify-content: space-evenly; /* Distribuye los elementos del formulario de manera uniforme */
     }
-
+    
+    /* Estilo para la entrada en el pie de página */
     .footer__input{
-        flex-basis: 100%;
-        margin: 0;
-        margin-bottom: 16px;
+        flex: 1; /* La entrada ocupa todo el espacio disponible */
     }
-
-    .footer__submit{
-        margin-right: auto;
-        margin-left: 0;
-        
-
-        /* 
-        margin:0;
-        width: 100%;
-        */
+    
+    /* Consultas de medios (Media Queries) */
+    
+    /* Estilos para pantallas con un ancho máximo de 600px */
+    @media (max-width:600px){
+        .hero__title{
+            font-size: 2rem; /* Tamaño de la fuente del título del héroe */
+        }
+    
+        .hero__paragraph{
+            font-size: 1rem; /* Tamaño de la fuente del párrafo del héroe */
+        }
+    
+        .subtitle{
+            font-size: 1.8rem; /* Tamaño de la fuente del subtítulo */
+        }
+    
+        .footer__title{
+            justify-self: start; /* Alinea el título al inicio */
+            margin-bottom: 15px; /* Espacio debajo del título */
+        }
+    
+        .nav--footer{
+            padding-bottom: 60px; /* Espacio en la parte inferior de la navegación */
+        }
+    
+        .nav__link--footer{
+            justify-content: space-between; /* Distribuye los enlaces con espacio entre ellos */
+        }
+    
+        .footer__inputs{
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+        }
+    
+        .footer__input{
+            flex-basis: 100%; /* La entrada ocupa todo el ancho disponible */
+            margin: 0; /* Sin márgenes */
+            margin-bottom: 16px; /* Espacio en la parte inferior de la entrada */
+        }
+    
+        .footer__submit{
+            margin-right: auto; /* Empuja el botón hacia la izquierda */
+            margin-left: 0; /* Sin margen a la izquierda */
+    
+            
+        }
     }
 }
