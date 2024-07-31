@@ -1,13 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {     // Espera a que el contenido del DOM esté completamente cargado antes de ejecutar el script.
-    const searchInput = document.getElementById('search');
-    const suggestions = document.getElementById('suggestions');
-    const product1 = document.getElementById('product1');
-    const product2 = document.getElementById('product2');
-    const compareBtn = document.getElementById('compare-btn');
-    const refreshBtn = document.getElementById('refresh-btn');
-    const result = document.getElementById('result');
-    const showInfoBtn = document.getElementById('show-info-btn');
-    const infoModal = document.getElementById('info-modal');
+// Obtiene el elemento de entrada de búsqueda por su ID
+const searchInput = document.getElementById('search');
+// Obtiene el contenedor de sugerencias por su ID
+const suggestions = document.getElementById('suggestions');
+// Obtiene el primer elemento de producto por su ID
+const product1 = document.getElementById('product1');
+// Obtiene el segundo elemento de producto por su ID
+const product2 = document.getElementById('product2');
+// Obtiene el botón de comparación por su ID
+const compareBtn = document.getElementById('compare-btn');
+// Obtiene el botón de actualización por su ID
+const refreshBtn = document.getElementById('refresh-btn');
+// Obtiene el contenedor de resultados por su ID
+const result = document.getElementById('result');
+// Obtiene el botón para mostrar información por su ID
+const showInfoBtn = document.getElementById('show-info-btn');
+// Obtiene el elemento modal de información por su ID
+const infoModal = document.getElementById('info-modal');
+
  // Obtiene referencias a los elementos del DOM necesarios para la funcionalidad de la página.
 
 
@@ -126,17 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {     // Espera a que el con
         const filteredProducts = productos.filter(producto => 
             producto.nombre.toLowerCase().includes(input.toLowerCase())
         );
-        // Filtra los productos que contienen el texto ingresado en su nombre.
+        // Filtra los productos que contienen el texto ingresado en su nombre. Este código filtra un array de productos para encontrar aquellos cuyos nombres contienen una cadena de caracteres específica, sin distinguir entre mayúsculas y minúsculas.
 
 
         filteredProducts.forEach(producto => {             // Para cada producto filtrado, crea un elemento de sugerencia.
-            const div = document.createElement('div');
-            div.classList.add('suggestion');
-            div.innerText = producto.nombre;
+            const div = document.createElement('div'); // Crea un nuevo elemento 'div'
+            div.classList.add('suggestion'); // Añade la clase 'suggestion' al elemento 'div'
+            div.innerText = producto.nombre; // Establece el texto interno del 'div' al nombre del producto
             div.addEventListener('click', () => {                 // Al hacer clic en una sugerencia, se asigna el producto a uno de los campos de comparación.
-                if (!product1.dataset.id) {
-                    product1.innerText = producto.nombre;
-                    product1.dataset.id = producto.id;
+                if (!product1.dataset.id) { //Verifica si el atributo del elemento 'product1' no existe o está vacío. Posteriormente almacena el dato personalizado a. través de dataset "!" esto verifica si el valor es falso, indeifnido o null, en este caso si el if es falsy.
+                    product1.innerText = producto.nombre; // Asigna el nombre del producto al texto del elemento 'product1'
+                    product1.dataset.id = producto.id; // Asigna el identificador del producto a un atributo de datos personalizado 'data-id' del elemento 'product1'
                 } else if (!product2.dataset.id && producto.id !== parseInt(product1.dataset.id)) {
                     product2.innerText = producto.nombre;
                     product2.dataset.id = producto.id;
@@ -146,26 +156,29 @@ document.addEventListener('DOMContentLoaded', () => {     // Espera a que el con
                 suggestions.innerHTML = ''; // Limpia las sugerencias después de seleccionar un producto.
                 searchInput.value = ''; // Limpia el campo de búsqueda.
             });
-            suggestions.appendChild(div);
+            suggestions.appendChild(div); // Asumiendo que 'suggestions' es un elemento DOM (por ejemplo, un contenedor de sugerencias) y 'div' es un elemento creado dinámicamente (como una sugerencia individual).
+             // Añade el elemento 'div' como hijo del elemento 'suggestions'
         });
     }
 
     searchInput.addEventListener('input', (e) => {         // Detecta cambios en el campo de búsqueda y muestra las sugerencias correspondientes.
-        showSuggestions(e.target.value);
+        showSuggestions(e.target.value); //Llama a la función showSuggestions y le pasa el valor seleccionado. 
     });
 
     compareBtn.addEventListener('click', () => {         // Maneja la acción del botón de comparación.
-        const productId1 = parseInt(product1.dataset.id);
+        const productId1 = parseInt(product1.dataset.id); 
         const productId2 = parseInt(product2.dataset.id);
+        // Obtiene el valor del atributo 'data-id' del primer producto y lo convierte en un número entero
 
-        if (!productId1 || !productId2) {
+
+        if (!productId1 || !productId2) { //Verifica si alguno de los dos no están definidos.
             alert('Por favor, seleccione dos productos para comparar.');
             return; // Asegura que se hayan seleccionado dos productos antes de continuar.
         }
 
-        const producto1 = productos.find(p => p.id === productId1);
+        const producto1 = productos.find(p => p.id === productId1); 
         const producto2 = productos.find(p => p.id === productId2);
-
+        //Crea dos variables nuevas para buscar un producto específico en el array productos, mediante id. Si lo encuentra, lo asigna a la variable Producto. 
         if (producto1.tipo === producto2.tipo) {
             alert('No se pueden comparar productos del mismo tipo.');
             product2.innerText = 'Producto 2'; // Restablece el segundo producto si son del mismo tipo.
